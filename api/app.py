@@ -21,7 +21,7 @@ def read_metrics(
     skip: int = 0,
     limit: Optional[int] = None,
     # Other
-    db: Session = Depends(get_session)
+    db: Session = Depends(get_session),
 ):
     query = db.query(models.Metric)
 

@@ -5,10 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from config import DATABASE_PATH
 
 
-engine = create_engine(
-    "sqlite:///" + str(DATABASE_PATH),
-    connect_args={"check_same_thread": False}
-)
+engine = create_engine("sqlite:///" + str(DATABASE_PATH), connect_args={"check_same_thread": False})
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

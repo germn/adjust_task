@@ -15,12 +15,7 @@ def cli():
 @cli.command()
 def load_dataset():
     df = pandas.read_csv(DATASET_PATH)
-    df.to_sql(
-        con=engine,
-        name=models.Metric.__tablename__,
-        index_label="metric_id",
-        if_exists="replace"
-    )
+    df.to_sql(con=engine, name=models.Metric.__tablename__, index_label="metric_id", if_exists="replace")
 
 
 @cli.command()
